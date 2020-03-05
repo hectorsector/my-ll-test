@@ -13,4 +13,4 @@ steps:
     event: issues.assigned
     link: '{{ repoUrl }}'
     actions:
-      - type: closeIssue
+      - type: closeIssue # OK!
