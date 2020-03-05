@@ -14,3 +14,6 @@ steps:
     link: '{{ repoUrl }}'
     actions:
       - type: closeIssue # OK!
+tags: [
+  "Beginner"
+]
