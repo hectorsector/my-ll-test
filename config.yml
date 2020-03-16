@@ -18,7 +18,7 @@ steps:
         data:
           info: '%payload.pull_request.labels%'
       - type: gate
-        left: "bug"
+        left: '/bug/gm'
         operator: test
         right: '%payload.pull_request.labels%'
         else:
