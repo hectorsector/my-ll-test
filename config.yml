@@ -20,7 +20,7 @@ steps:
       - type: gate
         required: false
         left: '%payload.pull_request.labels%'
-        operator: includes
+        operator: test
         right: "bug"
         else:
           - type: respond
@@ -30,7 +30,7 @@ steps:
       - type: gate
         required: false
         left: '%payload.pull_request.labels%'
-        operator: includes
+        operator: test
         right: '"name":"bug"'
         else:
           - type: respond
