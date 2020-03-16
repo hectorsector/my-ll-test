@@ -10,10 +10,13 @@ before:
 steps:
   - title: First step
     description: The first step in your course
-    event: issues.assigned
+    event: pull_request_review
     link: '{{ repoUrl }}'
     actions:
-      - type: closeIssue # OK!
+      - type: respond
+        with: debug.md
+        data:
+          info: '%payload.pull_request.labels%'
 tags: [
   "Beginner"
 ]
