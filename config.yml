@@ -2,7 +2,7 @@ title: test-my-course
 description: test
 template:
   repo: my-ll-test-template
-  name: my-ll-test
+  name: my-ll-test-course
 before:
   - type: createIssue
     title: Welcome!
