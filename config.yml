@@ -26,8 +26,8 @@ steps:
             with: uh-oh.md
             data:
               check: bug
-       - type: respond
-         with: new-issue.md
+      - type: respond
+        with: new-issue.md
           
 tags: [
   "Beginner"
