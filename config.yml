@@ -20,7 +20,7 @@ steps:
       - type: gate
         left: '%payload.pull_request.labels%'
         operator: includes
-        right: 'bug'
+        right: 'name:bug'
         else:
           - type: respond
             with: uh-oh.md
