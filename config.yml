@@ -18,9 +18,9 @@ steps:
         data:
           info: '%payload.pull_request.labels%'
       - type: gate
-        left: '/bug/gm'
-        operator: test
-        right: '%payload.pull_request.labels%'
+        left: '%payload.pull_request.labels%'
+        operator: includes
+        right: 'bug'
         else:
           - type: respond
             with: uh-oh.md
