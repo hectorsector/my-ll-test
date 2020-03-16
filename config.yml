@@ -17,6 +17,28 @@ steps:
         with: debug.md
         data:
           info: '%payload.pull_request.labels%'
+      - type: gate
+        required: false
+        left: '%payload.pull_request.labels%'
+        operator: includes
+        right: "bug"
+        else:
+          - type: respond
+            with: uh-oh.md
+            data:
+              check: bug
+      - type: gate
+        required: false
+        left: '%payload.pull_request.labels%'
+        operator: includes
+        right: '"name":"bug"'
+        else:
+          - type: respond
+            with: uh-oh.md
+            data:
+              check: 'name: bug'
+              
+          
 tags: [
   "Beginner"
 ]
