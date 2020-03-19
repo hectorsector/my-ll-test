@@ -5,29 +5,39 @@ template:
   name: my-ll-test-course
 before:
   - type: createIssue
-    title: Welcome!
+    title: Welcome
     body: new-issue.md
 steps:
   - title: First step
     description: The first step in your course
-    event: pull_request_review
+    event: issue_comment
     link: '{{ repoUrl }}'
     actions:
       - type: respond
+        issue: Welcome
         with: debug.md
         data:
-          info: '%payload.pull_request.labels%'
-      - type: gate
-        left: '%payload.pull_request.labels%'
-        operator: includes
-        right: 'name:bug'
-        else:
-          - type: respond
-            with: uh-oh.md
-            data:
-              check: bug
+          info: responding to Welcome without quotes
       - type: respond
-        with: new-issue.md
+        issue: "Welcome"
+        with: debug.md
+        data:
+          info: responding to Welcome WITH quotes
+      - type: gate
+        left: '%payload.comment.body%'
+        operator: ===
+        right: hi
+        else:
+        - type: respond
+          issue: Welcome
+          with: debug.md
+          data:
+            info: responding to Welcome without quotes
+        - type: respond
+          issue: "Welcome"
+          with: debug.md
+          data:
+            info: responding to Welcome WITH quotes
           
 tags: [
   "Beginner"
