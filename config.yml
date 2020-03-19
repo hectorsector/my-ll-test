@@ -28,16 +28,16 @@ steps:
         operator: ===
         right: hi
         else:
-        - type: respond
-          issue: Welcome
-          with: debug.md
-          data:
-            info: responding to Welcome without quotes
-        - type: respond
-          issue: "Welcome"
-          with: debug.md
-          data:
-            info: responding to Welcome WITH quotes
+          - type: respond
+            issue: Welcome
+            with: debug.md
+            data:
+              info: responding to Welcome without quotes
+          - type: respond
+            issue: "Welcome"
+            with: debug.md
+            data:
+              info: responding to Welcome WITH quotes
           
 tags: [
   "Beginner"
